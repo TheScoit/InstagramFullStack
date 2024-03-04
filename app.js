@@ -3,7 +3,7 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-var expressSession = require('express-session');
+const expressSession = require('express-session');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
@@ -51,3 +51,7 @@ app.use(function(err, req, res, next) {
 });
 
 module.exports = app;
+
+
+
+// passport is the only module which logged in you

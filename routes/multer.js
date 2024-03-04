@@ -2,6 +2,8 @@ const multer = require("multer");
 const path = require("path");
 const crypto = require("crypto");
 
+// github mei disk storage se utha lo code 
+
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
     cb(null, "./public/images/uploads");

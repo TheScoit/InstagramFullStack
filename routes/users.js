@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const plm = require("passport-local-mongoose");
-
-mongoose.connect("mongodb://127.0.0.1:27017/instainsta");
+// mongodb://numbers/databasename
+mongoose.connect("mongodb://127.0.0.1:27017/Instagram");
 
 const userSchema = mongoose.Schema({
   username: String,
@@ -47,3 +47,6 @@ const userSchema = mongoose.Schema({
 userSchema.plugin(plm);
 
 module.exports = mongoose.model("user", userSchema);
+
+// by use of this line mongoose.model("user",userSchema) we can perform CRUD create,read,update,delete
+// by use of this line userSchema.plugin(plm) we can perform serialize and deserialize0

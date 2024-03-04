@@ -5,7 +5,7 @@ const localStrategy = require("passport-local");
 const userModel = require("./users");
 const postModel = require("./posts");
 const storyModel = require("./story");
-passport.use(new localStrategy(userModel.authenticate()));
+passport.use(new localStrategy(userModel.authenticate())); //by use of this user is login
 const upload = require("./multer");
 const utils = require("../utils/utils");
 
@@ -244,3 +244,8 @@ function isLoggedIn(req, res, next) {
 }
 
 module.exports = router;
+
+
+
+// never apply isLoggedIn on / and /Login , /register , /logout  bcoz it will create problem
+// isLoggedIn is a protected route . we use this to protect route 
